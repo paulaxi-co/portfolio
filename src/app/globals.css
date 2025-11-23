@@ -1,0 +1,21 @@
+@layer theme, base, mui, components, utilities;
+@import 'tailwindcss';
+
+
+html {
+  /* overflow: auto; */
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #171717;
+}
+
+.radial-bg {
+  background: radial-gradient(#C6B299, #EDE5DB00);
+}
+
+@theme {
+  --color-primary-400: #EDE5DB;
+  --color-primary-600: #C6B299;
+}
