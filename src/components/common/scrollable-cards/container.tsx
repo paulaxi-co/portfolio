@@ -41,7 +41,7 @@ export function ScrollableContainer<T>({ data, renderItem, extractKey }: Scrolla
       const nextCard = cards[index + 1];
       const cardInner = card.querySelector<HTMLDivElement>('.card__inner');
 
-      ScrollObserver.Element(nextCard, { offsetTop, offsetBottom: window.innerHeight - card.clientHeight }).onScroll(({ percentageY }) => {
+      ScrollObserver.Element(nextCard, { offsetTop, offsetBottom: window.innerHeight - card.clientHeight }).onScroll(({ percentageY }: {percentageY: number}) => {
         cardInner!.style.scale = valueAtPercentage({
           from: 1,
           to: toScale,

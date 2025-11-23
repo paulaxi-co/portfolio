@@ -70,6 +70,7 @@ class GmailService {
         }
       });
     } catch(err) {
+      /* @ts-expect-error - trust me bro */
       printObject(err.response.data, 'exc')
       throw new Error("Error while sending the email")
     }
