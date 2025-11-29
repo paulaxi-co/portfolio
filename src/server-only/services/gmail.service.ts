@@ -1,6 +1,7 @@
 import 'server-only'
 import { gmail_v1, google } from 'googleapis';
 import { IEmailDTO } from '../models/email.dto';
+import { GoogleAuth } from 'google-auth-library';
 
 function printObject(obj: unknown, oKey: string = 'empty') {
   if (obj && typeof obj === 'object') {
@@ -21,13 +22,15 @@ class GmailService {
 
   constructor() {
 
-    const auth = new google.auth.GoogleAuth({
-      keyFile: './secret/service-account-landing.json',
+    const keyFile = JSON.parse(process.env.GOOGLE_KEY || '{}')
+
+    const auth = new GoogleAuth({
+      credentials: keyFile,
       scopes: ['https://www.googleapis.com/auth/gmail.send'],
       clientOptions: {
         subject: this.user
       }
-    });
+    })
 
     this.gmail = google.gmail({
       version: 'v1',
@@ -70,8 +73,7 @@ class GmailService {
         }
       });
     } catch(err) {
-      /* @ts-expect-error - trust me bro */
-      printObject(err.response.data, 'exc')
+      printObject(err, 'exc')
       throw new Error("Error while sending the email")
     }
 
