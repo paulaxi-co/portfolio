@@ -1,6 +1,6 @@
 {
   "name": "pau",
-  "version": "beta-0.0.3",
+  "version": "beta-0.0.4",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

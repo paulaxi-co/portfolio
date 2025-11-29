@@ -5,6 +5,7 @@ import { animate, spring } from "animejs";
 import { twMerge } from "tailwind-merge";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Item {
   id: string;
@@ -35,10 +36,16 @@ export const items = [
   },
 ]
 
+function calculateIndex(selected : string) {
+    const foundIndex = items.findIndex(item => item.id === selected);
+    if (foundIndex === -1) return 2; // Default index is the project position
+    return foundIndex;
+}
+
 
 interface NavbarProps {
   selected: string;
-  onChange: (newItem: string) => void;
+  onChange?: (newItem: string) => void;
   className?: string;
 }
 export function Navbar({ selected, onChange, className }: NavbarProps) {
@@ -48,12 +55,7 @@ export function Navbar({ selected, onChange, className }: NavbarProps) {
   const squareRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  const index = useMemo(() => {
-    const foundIndex = items.findIndex(item => item.id === selected);
-    if (foundIndex === -1) return 0;
-    return foundIndex;
-
-  }, [selected]);
+  const index = useMemo(() => calculateIndex(selected), [selected])
 
   useLayoutEffect(() => {
     const layout = layoutRef.current;
@@ -76,13 +78,15 @@ export function Navbar({ selected, onChange, className }: NavbarProps) {
   }, [index, width]);
 
   const handleClick = (item: Item) => {
-    onChange(item.id);
+    onChange?.(item.id);
     router.push(item.href);
   }
 
   return (
     <div className={twMerge("sm:flex justify-between items-center w-full max-w-[1200px] hidden", className)}>
-      <Image width={100} src="/paula_sign.svg" alt="Paula handsign" height={50} />
+      <Link href="/">
+        <Image width={100} src="/paula_sign.svg" alt="Paula handsign" height={50} />
+      </Link>
       <div ref={layoutRef} style={{ height: BUTTON_HEIGHT + 32 }} className={"bg-primary-400 w-full max-w-[800] py-[11] rounded-full relative flex flex-row items-center"}>
         <div style={{ height: BUTTON_HEIGHT }} className="relative w-full">
           <div ref={squareRef} style={{ height: BUTTON_HEIGHT, width }} className="absolute px-4">

@@ -1,6 +1,4 @@
-import BehanceIcon from "@/components/common/icons/behance";
-import { GithubIcon } from "@/components/common/icons/github";
-import { LinkedinIcon } from "@/components/common/icons/linkedin";
+import { Socials } from "@/components/common/socials";
 import { twMerge } from "tailwind-merge";
 
 interface SocialProps {
@@ -9,9 +7,9 @@ interface SocialProps {
 export function Social({ className }: SocialProps) {
   return (
     <div className={twMerge("flex flex-row justify-center sm:justify-start items-end gap-2", className)}>
-      <BehanceIcon />
-      <GithubIcon />
-      <LinkedinIcon />
+      <Socials social="behance" width={48} height={48} />
+      <Socials social="github" width={48} height={48} />
+      <Socials social="linkedin" width={48} height={48} />
     </div>
   );
 }

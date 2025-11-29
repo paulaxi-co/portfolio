@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useMemo } from "react";
 import { Contact } from "../contact";
 import { items, Navbar } from "../navbar";
 import { Footer } from "../footer";
@@ -11,10 +11,20 @@ interface CommonLayoutProps {
 }
 export function CommonLayout({ children }: CommonLayoutProps) {
   const pathname = usePathname();
-  const [tab, setTab] = useState(() => items.find(item => item.href === pathname)?.id || "");
+
+  const tab = useMemo(() => {
+    const foundItem = items.find(item => item.href === pathname)
+    if (foundItem) {
+      return foundItem.id
+    } else {
+      return "projects" // We return projects by default since all the unhandled routed should belong to existing projects
+    }
+
+  }, [pathname]);
+
   return (
     <div className="flex flex-col gap-8 items-center w-full sm:py-[84px]">
-      <Navbar className="fixed top-[50px] left-1/2 -translate-1/2 z-10" selected={tab} onChange={setTab} />
+      <Navbar className="fixed top-[50px] left-1/2 -translate-1/2 z-10" selected={tab} />
       {children}
       <Contact />
       <Footer />
