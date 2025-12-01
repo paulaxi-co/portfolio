@@ -31,7 +31,7 @@ Hiya! I’m Paula, a Product Designer with 3+ years of experience crafting human
 
 ---
 
-## 📫 Contáctame  
+## 💬 Let's Chat  
 A project, a crazy idea, dogs/cats and foodie or a coffee-worthy piece of chismecito? Send it my way and let’s talk!
 [Email](hi@paulaxi.co) · [LinkedIn](https://www.linkedin.com/in/paula-mantillat/)
 
