@@ -25,8 +25,7 @@ export function Summary() {
               <li>🐶 Fighting with Enzo over his breakfast</li>
               <li>🍟 Team salchipapa costeña & french fries lover</li>
               <li>📚 One more chapter… always</li>
-              <li>🎬 Certified couch film criti</li>
-              <li>📚 One more chapter… alwaysc</li>
+              <li>🎬 Certified couch film critic</li>
             </ul>
             <div className="sm:relative left-[370px] top-[-32px]">
               <ul className="list-disc pl-4">
