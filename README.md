@@ -1,37 +1,23 @@
-# Paula Mantilla — Product Designer  
-[paulaxi.co](https://paulaxi.co) · [LinkedIn](https://www.linkedin.com/in/paula-mantillat/) · [Behance](https://www.behance.net/paulamantilla4)  
+# Paula XI — Personal Portfolio
 
----
+A polished, human-centered portfolio showcasing my work in Product Design, UX/UI, and digital experiences.  
+Built to be fast, clean, and intentionally simple — just like the way I design.
 
-## 👋 About Me  
-Hiya! I’m Paula, a Product Designer with 3+ years of experience crafting human-centered digital experiences. I believe in clean, intuitive, purposeful design — from research and prototyping to solid design systems.
+## Dependencies
 
----
+- Node v25.2.1
+- Yarn
 
-## 🎯 What I Do
-- User-centered interfaces & fluid interaction design
-- User research & insight-driven decision-making
-- Prototyping, testing, and iterative refinement
-- Design systems & reusable components
+## Installation
 
----
+1. Install dependencies using yarn
 
-## 🛠 My Workflow  
-1. **Discover** — Listen, research, and uncover real needs.
-2. **Define** — Map flows, structure ideas, and align objectives.
-3. **Design** — Create, prototype, and refine.
-4. **Deliver** — Ship polished outputs and improve through feedback.
+```bash
+yarn
+```
 
----
+2. Run development server
 
-## ✨ Extras  
-- Responsive, optimized web design
-- UX + UI + Design systems approach
-- Always open to new creative challenges
-
----
-
-## 💬 Let's Chat  
-A project, a crazy idea, dogs/cats and foodie or a coffee-worthy piece of chismecito? Send it my way and let’s talk!
-[Email](hi@paulaxi.co) · [LinkedIn](https://www.linkedin.com/in/paula-mantillat/)
-
+```bash
+yarn dev
+```
