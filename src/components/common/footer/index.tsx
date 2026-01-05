@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <div className="w-full px-[37px]">
       <div className="radial-bg w-full h-[2px]" />
-      <p className="my-[16px]">© 2025 Paula Mantilla. All rights reserved.</p>
+      <p className="my-[16px]">© 2026 Paula Mantilla. All rights reserved.</p>
       <div className="w-full flex flex-row justify-between">
         <div className="flex flex-row items-center gap-[8px]">
           <Socials social="behance" width={32} height={32} />
