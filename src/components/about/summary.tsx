@@ -17,7 +17,7 @@ export function Summary() {
         <div>
           <Subtitle>ABOUT ME</Subtitle>
           <p>
-            I’m Paula, a Product Designer who believes the best products are simple, intuitive, and human. My journey blends design with a background in logistics and customer experience, giving me a unique lens to spot friction and create clarity. I thrive in collaborative environments where design, business, and technology intersect.
+            I’m Paula, a Product Designer who believes the best products are simple, intuitive, and human. My journey blends design with a background in business and customer experience, giving me a unique lens to spot friction and create clarity. I thrive in collaborative environments where design, business, and technology intersect.
           </p>
           <div className="mt-[48px]">
             <Subtitle>OFF-SCREEN</Subtitle>
