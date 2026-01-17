@@ -16,10 +16,10 @@ interface TitleProps {
 const Title = forwardRef<HTMLHeadingElement, TitleProps>(({ children, center, className }, ref) => {
   return (
     <h1 ref={ref} className={twMerge(
-      urbanist.variable,
       className,
-      'leading-[40px] text-[32px] sm:text-[60px] my-0 font-[600]',
-      center && 'text-center'
+      'leading-[40px] text-[32px] sm:text-[60px] my-0 font-semibold',
+      center && 'text-center',
+      urbanist.className,
 
     )}>{children}</h1>
   );

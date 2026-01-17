@@ -40,7 +40,7 @@ export function Contact() {
       reset();
       setSnackState({ message: 'Message sent!', open: true });
     }).catch(() => {
-      setSnackState({ message: 'There was an error sending you message :c', open: true })
+      setSnackState({ message: 'There was an error sending your message :c', open: true })
     })
   }
 
@@ -95,7 +95,7 @@ export function Contact() {
         <div className="mt-[32px] group">
           <Button onClick={() => isVisible ? handleSubmit(onSubmit)() : showForm()} variant="contained">
             <span>Start conversation</span>
-            <RightArrowIcon className="group-hover:-rotate-45 transition" />
+            <RightArrowIcon className="rotate-90 group-hover:rotate-45 transition ml-2" />
           </Button>
         </div>
       </div>

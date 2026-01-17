@@ -87,7 +87,7 @@ export function Navbar({ selected, onChange, className }: NavbarProps) {
       <Link href="/">
         <Image width={100} src="/paula_sign.svg" alt="Paula handsign" height={50} />
       </Link>
-      <div ref={layoutRef} style={{ height: BUTTON_HEIGHT + 32 }} className={"bg-primary-400 w-full max-w-[800] py-[11] rounded-full relative flex flex-row items-center"}>
+      <div ref={layoutRef} style={{ height: BUTTON_HEIGHT + 16 }} className={"bg-primary-400 w-full max-w-[800] py-[11] rounded-full relative flex flex-row items-center"}>
         <div style={{ height: BUTTON_HEIGHT }} className="relative w-full">
           <div ref={squareRef} style={{ height: BUTTON_HEIGHT, width }} className="absolute px-4">
             <div className="w-full h-full rounded-full bg-white" />

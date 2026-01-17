@@ -39,7 +39,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <span>
             Read
             </span>
-            <RightArrowIcon />
+            <RightArrowIcon className="rotate-90 ml-2" />
           </Button>
         </div>
       </div>

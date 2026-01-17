@@ -31,7 +31,7 @@ export function Footer() {
           </ul>
         </nav>
         <button onClick={scrollUp}>
-          <UpArrowIcon />
+          <UpArrowIcon width={48} />
         </button>
       </div>
     </div>

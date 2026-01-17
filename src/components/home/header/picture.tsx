@@ -16,7 +16,7 @@ export function Picture() {
           <span>
             Let&#39;s Chat
           </span>
-          <RightArrowIcon className="-rotate-45"/>
+          <RightArrowIcon className="rotate-45 ml-2"/>
         </Button>
       </div>
     </div>
