@@ -2,7 +2,7 @@ import { Urbanist } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 
 const urbanist = Urbanist({
-  weight: '400'
+  weight: ['400', '500', '600']
 })
 
 export interface SubtitleProps {
@@ -11,7 +11,7 @@ export interface SubtitleProps {
 }
 export function Subtitle({ className, children }: SubtitleProps) {
   return (
-    <h2 className={twMerge('font-normal text-3xl', className, urbanist.className)}>
+    <h2 className={twMerge('font-normal text-3xl', urbanist.className, className)}>
       {children}
     </h2>
   );

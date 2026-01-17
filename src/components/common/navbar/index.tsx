@@ -27,7 +27,7 @@ export const items = [
   {
     id: 'projects',
     label: 'Projects',
-    href: '/#projects'
+    href: '/project'
   },
   {
     id: 'contact',

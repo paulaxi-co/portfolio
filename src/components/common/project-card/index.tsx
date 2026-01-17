@@ -25,7 +25,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <img alt={project.title} src={project.image} className="w-full h-full object-fill rounded-[16px]" />
       </div>
       <div className="flex-1 p-[32px]">
-        <Subtitle>{project.title}</Subtitle>
+        <Subtitle className="font-bold">{project.title}</Subtitle>
         <div className="flex flex-row items-center mt-[16px] gap-[16px]">
           {project.chips.map(chip => (
             <Chip key={chip} label={chip} />

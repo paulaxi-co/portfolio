@@ -13,7 +13,7 @@ export function CommonLayout({ children }: CommonLayoutProps) {
   const pathname = usePathname();
 
   const tab = useMemo(() => {
-    const foundItem = items.find(item => item.href === pathname)
+    const foundItem = items.find(item => pathname === item.href)
     if (foundItem) {
       return foundItem.id
     } else {
