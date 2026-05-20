@@ -50,6 +50,7 @@ export function ProjectHome() {
           description="Strategy, systems, and structured thinking behind my work." 
           projects={[
             {
+              url: 'https://docs.google.com/document/d/1W9UuqQZE4nxHabFme6khjHHTm5Luz_FAIrKQAYyq1Kk/edit?tab=t.0#heading=h.3d7ynd5hecuj',
               image: '/safehome_thumbnail.jpg',
               chips: [
                 'SCRUM',
@@ -60,6 +61,7 @@ export function ProjectHome() {
               description: 'Strategic product document for a fictional app, applying SCRUM to define backlog, MVP, roadmap, and value-driven prioritization.'
             },
             {
+              url: 'https://docs.google.com/document/d/1vxf1P36qGlkUnBBiVyFhJHDwnyuOG8Q6Nwn87eO3Kdg/edit?tab=t.0#heading=h.3d7ynd5hecuj',
               image: '/creative_catelyst_thumbnail.jpg',
               chips: [
                 'AI',
