@@ -22,6 +22,7 @@ export function ProjectHome() {
           description="Additional projects that shaped my journey as a designer." 
           projects={[
             {
+              url: "https://www.behance.net/gallery/239431439/Gopass-Coderhouse-UX-Research",
               image: '/gopass_thumbnail.png',
               chips: [
                 'UX Research',
@@ -32,6 +33,7 @@ export function ProjectHome() {
               description: 'UX research project focused on identifying friction points in urban mobility and validating improvement opportunities through user research and testing.'
             },
             {
+              url: 'https://www.behance.net/gallery/239852559/Fyniq-App-Fintech-Coderhouse-UX-Research',
               image: '/fyniq_thumbnail.png',
               chips: [
                 'UX Writing',
