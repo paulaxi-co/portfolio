@@ -18,6 +18,34 @@ export function ProjectHome() {
           <ScrollableContainer extractKey={item => item.id} renderItem={({ item }) => <ProjectCard project={item} />} data={HIGHLIGHTED_PROJECTS} />
         </div>
         <TwoColumnProject 
+          title="Featured Work" 
+          description="Additional projects that shaped my journey as a designer." 
+          projects={[
+            {
+              url: "https://apps.apple.com/us/app/silvr-fashion-ai/id6755407932",
+              image: '/silvr_banner.png',
+              chips: [
+                'AI Fashion',
+                'Mobile App',
+                'Product Strategy'
+              ],
+              title: 'SILVR AI',
+              description: 'Fashion discovery platform using AI to identify and shop outfits from social media, TV, and real-world inspiration'
+            },
+            {
+              url: 'https://www.myvoya.ai/',
+              image: '/voya_banner.png',
+              chips: [
+                'AI Product Design',
+                'Travel Tech',
+                'UX Strategy'
+              ],
+              title: 'VOYA AI',
+              description: 'Al-powered travel planning platform focused on conversational trip building, itinerary generation, and conversion-driven booking experiences.'
+            },
+          ]}
+        />
+        <TwoColumnProject 
           title="More Work" 
           description="Additional projects that shaped my journey as a designer." 
           projects={[
