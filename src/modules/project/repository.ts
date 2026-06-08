@@ -88,7 +88,7 @@ export const projectRepository = {
             name: 'button',
             props: {
               text: 'View Full Case Study',
-              href: 'https://google.com'
+              href: 'https://www.behance.net/gallery/235477211/Koepis-Coworking-App-Coderhouse-Prototipado'
             }
           },
           {
@@ -426,7 +426,7 @@ export const projectRepository = {
             name: 'button',
             props: {
               text: 'View Full Case Study',
-              href: 'https://google.com'
+              href: 'https://www.behance.net/gallery/235447909/Jaguarco-Website-Redesign-Coderhouse-UXUI-Avanzado'
             }
           },
           {
@@ -566,7 +566,7 @@ export const projectRepository = {
           name: 'button',
           props: {
             text: 'View Full Case Study',
-            href: 'https://google.com'
+            href: 'https://www.behance.net/gallery/229319387/Bacano-Bites-App-Coderhouse-UXUI'
           }
         },
         {
