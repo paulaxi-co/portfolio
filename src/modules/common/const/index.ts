@@ -20,7 +20,7 @@ export const HIGHLIGHTED_PROJECTS: Project[] = [
   {
     id: 'irth',
     title: 'Irth Solutions',
-    description: 'Native mobile app for an 80s-inspired Colombian restaurant, with reservations, in-app ordering, real-time tracking, and gamified interactions.',
+    description: 'Enterprise product redesign that simplified complex field and geospatial workflows through user research, strategic UX, and cross-functional collaboration.',
     chips: ['Product Design', 'Redesign'],
     image: '/Irth.png',
     href: '/project/irth'
