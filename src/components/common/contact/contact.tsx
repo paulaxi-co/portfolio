@@ -82,7 +82,7 @@ export function Contact() {
     <>
       <div id="contact" ref={root} className="w-full max-w-[800px] mt-[96px] mb-[128px] flex flex-col items-center px-4">
         <Title center>Let&#39;s chat</Title>
-        <p className="w-full mt-4">
+        <p className="w-full mt-4 text-center">
           Whether it’s about joining your team, collaborating on a project, or simply chatting about design, books, or movies — I’m always open to meaningful conversations (fries included).
         </p>
         <div ref={formRef} style={{ height: maxHeight ? 0 : 'auto' }} className="overflow-hidden w-full">
