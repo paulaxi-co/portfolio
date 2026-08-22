@@ -11,7 +11,7 @@ interface ExperienceProps {
 export function Experience({className} : ExperienceProps) {
   return (
     <div className={twMerge('flex-col flex', className)}>
-      <h2 className={twMerge("font-[700] text-4xl text-center sm:text-end", urbanist.className)}>+4 Years</h2>
+      <h2 className={twMerge("font-[700] text-4xl text-center sm:text-end", urbanist.className)}>5+ Years</h2>
       <span className={twMerge("sm:text-end text-center", urbanist.className)}>Experience</span>
     </div>
   );
