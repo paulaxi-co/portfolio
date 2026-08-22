@@ -7,27 +7,27 @@ const data: EducationItem[] = [
   {
     id: '1',
     title: 'CODERHOUSE',
-    subtitle: 'BS in UX/UI',
-    graduationTag: 'Expected Graduation: May 2026'
+    subtitle: 'Bachelor in UX/UI',
+    graduationTag: '2025-2026'
 
   },
   {
     id: '2',
     title: 'CODERHOUSE',
-    subtitle: 'AFA UX/UI Development',
+    subtitle: 'Associate in UX/UI Development',
     graduationTag: '2023-2024'
 
   },
   {
     id: '3',
     title: 'IU Internationale Hochschule ',
-    subtitle: 'BS in Business and IT',
+    subtitle: 'Bachelor in Business and IT',
     graduationTag: '2021-2023'
 
   },
   {
     id: '4',
-    title: 'JAMES MADISON',
+    title: 'James Madison',
     subtitle: 'High School Diploma',
     graduationTag: '2020'
 
