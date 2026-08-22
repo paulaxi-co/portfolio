@@ -5,6 +5,18 @@ import { Item, TimeStep } from "./item";
 const data: TimeStep[] = [
   {
     id: '1',
+    title: 'Sr Product Designer',
+    subtitle: 'Silvr - Part Time',
+    items: [
+      'Designed end-to-end mobile experiences for an AI-powered fashion discovery platform.',
+      'Translated product ideas and user feedback into intuitive flows, prototypes, and polished interfaces.',
+      'Collaborated with product and engineering to refine interactions and deliver responsive, development-ready designs.'
+    ],
+    timeTag: '2026-Present'
+    
+  },
+  {
+    id: '2',
     title: 'UX Strategist',
     subtitle: 'Irth Solutions',
     items: [
@@ -15,7 +27,7 @@ const data: TimeStep[] = [
     timeTag: '2024-2025'
   },
   {
-    id: '2',
+    id: '3',
     title: 'Product Designer',
     subtitle: 'Freelance',
     items: [
@@ -23,18 +35,7 @@ const data: TimeStep[] = [
       'Built design systems and interactive prototypes using Figma and code (HTML, CSS, JS).',
       'Collaborated directly with clients, aligning business goals with user needs.'
     ],
-    timeTag: '2023-Present'
-  },
-  {
-    id: '3',
-    title: 'Job Coordinator',
-    subtitle: 'Everpro Restoration',
-    items: [
-      'Led user research and usability testing to uncover behaviors and needs.',
-      'Translated insights into personas, flows, and prototypes that informed strategy.',
-      'Presented findings to stakeholders, driving data-informed design decisions.'
-    ],
-    timeTag: '2024'
+    timeTag: '2024-Present'
   },
   {
     id: '4',
