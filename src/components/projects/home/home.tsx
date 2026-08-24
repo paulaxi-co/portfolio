@@ -29,7 +29,7 @@ export function ProjectHome() {
                 'Mobile App',
                 'Product Strategy'
               ],
-              title: 'SILVR AI',
+              title: 'Silvr AI',
               description: 'Fashion discovery platform using AI to identify and shop outfits from social media, TV, and real-world inspiration'
             },
             {
@@ -40,7 +40,7 @@ export function ProjectHome() {
                 'Travel Tech',
                 'UX Strategy'
               ],
-              title: 'VOYA AI',
+              title: 'Voya AI',
               description: 'Al-powered travel planning platform focused on conversational trip building, itinerary generation, and conversion-driven booking experiences.'
             },
           ]}
@@ -57,8 +57,8 @@ export function ProjectHome() {
                 'Mobile App',
                 'Redesign'
               ],
-              title: 'GOPASS',
-              description: 'UX research project focused on identifying friction points in urban mobility and validating improvement opportunities through user research and testing.'
+              title: 'GoPass',
+              description: 'UX research project focused on identifying friction points in urban mobility and validating improvement opportunities through user research and testing. (spanish)'
             },
             {
               url: 'https://www.behance.net/gallery/239852559/Fyniq-App-Fintech-Coderhouse-UX-Research',
@@ -68,36 +68,8 @@ export function ProjectHome() {
                 'Mobile App',
                 'Product Concept'
               ],
-              title: 'FYNIQ',
-              description: 'Gamified financial product concept where UX writing and narrative shape the experience, exploring how language influences user decisions and behavior.'
-            },
-          ]}
-        />
-        <TwoColumnProject 
-          title="Thinking Beyond the UI" 
-          description="Strategy, systems, and structured thinking behind my work." 
-          projects={[
-            {
-              url: 'https://docs.google.com/document/d/1W9UuqQZE4nxHabFme6khjHHTm5Luz_FAIrKQAYyq1Kk/edit?tab=t.0#heading=h.3d7ynd5hecuj',
-              image: '/safehome_thumbnail.jpg',
-              chips: [
-                'SCRUM',
-                'Product Strategy',
-                'Agile'
-              ],
-              title: 'SAFEHOME',
-              description: 'Strategic product document for a fictional app, applying SCRUM to define backlog, MVP, roadmap, and value-driven prioritization.'
-            },
-            {
-              url: 'https://docs.google.com/document/d/1vxf1P36qGlkUnBBiVyFhJHDwnyuOG8Q6Nwn87eO3Kdg/edit?tab=t.0#heading=h.3d7ynd5hecuj',
-              image: '/creative_catelyst_thumbnail.jpg',
-              chips: [
-                'AI',
-                'Prompt Engineering',
-                'UX Strategy'
-              ],
-              title: 'Creative UX Catalyst',
-              description: 'Theoretical exploration of prompt engineering as a UX tool to overcome creative saturation, supporting ideation and decision-making in design.'
+              title: 'Fyniq App',
+              description: 'Gamified financial product concept where UX writing and narrative shape the experience, exploring how language influences user decisions and behavior. (spanish)'
             },
           ]}
         />
