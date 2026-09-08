@@ -7,11 +7,11 @@ interface TwoColTextProps {
 export function TwoColText({ text1, text2 }: TwoColTextProps) {
   return (
     <Container>
-      <Grid container columns={2} spacing={12}>
-        <Grid size={1}>
+      <Grid container columns={12} spacing={{xs: 4, md: 12}}>
+        <Grid size={{xs: 12, md: 6}}>
           <Typography variant="h3">{text1}</Typography>
         </Grid>
-        <Grid size={1}>
+        <Grid size={{xs: 12, md: 6}}>
           <Typography>{text2}</Typography>
         </Grid>
       </Grid>

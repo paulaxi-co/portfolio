@@ -28,6 +28,8 @@ export function ScrollableContainer<T>({ data, renderItem, extractKey }: Scrolla
   const cardClassName = useMemo(() => `card-${idGen()}`, []);
 
   useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 768px)');
+    if (!desktop.matches) return;
 
     const cards = document.querySelectorAll<HTMLDivElement>(`.${cardClassName}`);
 
@@ -52,7 +54,7 @@ export function ScrollableContainer<T>({ data, renderItem, extractKey }: Scrolla
           to: 0.9,
           percentage: percentageY
 
-        })})`
+        })})`;
 
       })
 
@@ -67,7 +69,7 @@ export function ScrollableContainer<T>({ data, renderItem, extractKey }: Scrolla
   return (
     <div className="w-full flex flex-col">
       {data.map(item => (
-        <div className={twMerge(cardClassName, "sticky top-0")} key={extractKey(item)}>
+        <div className={twMerge(cardClassName, "py-4 md:sticky md:top-0 md:py-0")} key={extractKey(item)}>
           <div className="card__inner origin-top">
             {renderItem({ item })}
           </div>

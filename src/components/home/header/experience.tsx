@@ -10,9 +10,9 @@ interface ExperienceProps {
 }
 export function Experience({className} : ExperienceProps) {
   return (
-    <div className={twMerge('flex-col flex', className)}>
-      <h2 className={twMerge("font-[700] text-4xl text-center sm:text-end", urbanist.className)}>5+ Years</h2>
-      <span className={twMerge("sm:text-end text-center", urbanist.className)}>Experience</span>
+    <div className={twMerge('flex min-w-0 flex-col', className)}>
+      <h2 className={twMerge("text-center text-3xl font-[700] sm:text-4xl md:text-end", urbanist.className)}>5+ Years</h2>
+      <span className={twMerge("text-center md:text-end", urbanist.className)}>Experience</span>
     </div>
   );
 

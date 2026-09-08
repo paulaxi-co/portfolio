@@ -24,13 +24,13 @@ function LateralBar() {
 
 function Card({ step }: Pick<ItemProps, 'step'>) {
   return (
-    <div className="w-full sm:w-[500px] p-4 h-full rounded-lg bg-[#ADADAD26]">
-      <div className="flex flex-row justify-between">
+    <article className="h-full w-full rounded-2xl bg-[#ADADAD26] p-4 sm:w-[500px] sm:p-5">
+      <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
         <div>
           <Subtitle>{step.title}</Subtitle>
           <h3 className="font-[400] text-[18px]">{step.subtitle}</h3>
         </div>
-        <span>{step.timeTag}</span>
+        <span className="w-max rounded-full bg-white px-3 py-1 text-sm">{step.timeTag}</span>
       </div>
       <ul className="list-disc pl-4 mt-4">
         {step.items.map(item => (
@@ -38,14 +38,14 @@ function Card({ step }: Pick<ItemProps, 'step'>) {
         ))}
       </ul>
 
-    </div>
+    </article>
   );
 }
 
 
 export function Item({ step }: ItemProps) {
   return (
-    <div className="flex flex-row sm:h-[260px] my-4">
+    <div className="my-3 flex w-full max-w-[560px] flex-row sm:min-h-[260px]">
       <LateralBar />
       <Card step={step} />
     </div>

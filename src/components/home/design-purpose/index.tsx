@@ -5,11 +5,11 @@ import { Title } from "@/components/common/text/title";
 
 export function DesignPurpose() {
   return (
-    <div className="px-4">
+    <section className="w-full max-w-[1100px] px-4 py-10 md:py-16">
       <Title center>Design with purpose</Title>
       <p className="text-center mt-[10px]">I believe products should be simple, intuitive, and human. Here’s how I make that happen</p>
-      <div className="flex flex-col sm:flex-row mt-[55px]">
-        <div className="flex-1">
+      <div className="mt-10 grid gap-12 md:mt-[55px] md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+        <div>
           <Subtitle>What I do:</Subtitle>
           <List className="mt-[24px]">
             <Item>Interfaces that feel natural</Item>
@@ -18,9 +18,9 @@ export function DesignPurpose() {
             <Item>Design systems for clarity</Item>
           </List>
         </div>
-        <div className="flex-1">
+        <div>
           <Subtitle>How do I work:</Subtitle>
-          <div className="grid sm:grid-cols-2 gap-8 mt-[24px]">
+          <div className="mt-[24px] grid gap-4 sm:grid-cols-2 sm:gap-8">
             <Card title="1. Discover" description="Listen, research, and spot real needs." />
             <Card title="2. Define" description="Structure flows and align on strategy." className="relative sm:top-8" />
             <Card title="3. Design" description="Create, prototype, and refine." />
@@ -28,6 +28,6 @@ export function DesignPurpose() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

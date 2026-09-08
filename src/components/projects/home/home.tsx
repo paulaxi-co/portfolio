@@ -8,7 +8,7 @@ import { TwoColumnProject } from "./two-column-project";
 
 export function ProjectHome() {
   return (
-    <Container>
+    <Container className="px-4 sm:px-6">
       <Stack spacing={8}>
         <div>
           <Title center>Highlights</Title>

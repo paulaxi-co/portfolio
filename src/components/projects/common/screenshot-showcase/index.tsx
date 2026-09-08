@@ -18,7 +18,7 @@ interface ProjectScreenshotShowcaseProps {
 export function ProjectScreenshotShowcase({ screenshots, card }: ProjectScreenshotShowcaseProps) {
   return (
     <Container className="relative">
-      <Paper className="absolute top-4 right-4 p-4 bg-primary-400 rounded rotate-4 w-[33%]">
+      <Paper className="relative z-10 mb-6 w-full rounded bg-primary-400 p-4 md:absolute md:right-4 md:top-4 md:mb-0 md:w-[33%] md:rotate-4">
         <Typography variant="h5" fontWeight="500">{card.title}</Typography>
         <ul>
           {card.items.map(({ title, content }) => (
@@ -30,8 +30,8 @@ export function ProjectScreenshotShowcase({ screenshots, card }: ProjectScreensh
       </Paper>
       <Stack spacing={4}>
         {screenshots.map(({ src, alt }, index) => (
-          <div style={{ alignSelf: index % 2 === 0 ? 'start' : 'end' }} className="w-3/4" key={src}>
-            <Image src={src} alt={alt} width={800} height={600} />
+          <div style={{ alignSelf: index % 2 === 0 ? 'start' : 'end' }} className="w-full md:w-3/4" key={src}>
+            <Image className="h-auto w-full" src={src} alt={alt} width={800} height={600} />
           </div>
         ))}
       </Stack>

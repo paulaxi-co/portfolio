@@ -5,8 +5,7 @@ import { commonRepository } from "@/modules/common/repository";
 import { IEmailDTO } from "@/server-only/models/email.dto";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Snackbar, TextField } from "@mui/material";
-import { animate, createScope, Scope } from "animejs";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 
@@ -17,10 +16,6 @@ const scheme = z.object({
 })
 
 export function Contact() {
-  const scopeRef = useRef<Scope>(null);
-  const root = useRef(null);
-  const formRef = useRef<HTMLDivElement>(null);
-  const [maxHeight, setMaxHeight] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     defaultValues: {
@@ -35,7 +30,6 @@ export function Contact() {
   const onSubmit = (data: IEmailDTO) => {
     setSnackState({message: 'Sending...', open: true});
     commonRepository.sendEmail(data).then(() => {
-      scopeRef.current?.methods.disappear();
       setIsVisible(false);
       reset();
       setSnackState({ message: 'Message sent!', open: true });
@@ -44,52 +38,24 @@ export function Contact() {
     })
   }
 
-  useLayoutEffect(() => {
-    const form = formRef.current!;
-
-    const rect = form.getBoundingClientRect();
-    setMaxHeight(rect.height + 100);
-  }, []);
-
-  useEffect(() => {
-    scopeRef.current = createScope({ root }).add((self) => {
-      const form = formRef.current!;
-
-      self?.add('appear', () => {
-        animate(form, {
-          height: maxHeight
-        })
-      })
-
-      self?.add('disappear', () => {
-        animate(form, {
-          height: 0
-        })
-      })
-
-    });
-
-    return () => scopeRef.current?.revert();
-
-  }, [maxHeight]);
-
   const showForm = () => {
-    scopeRef.current?.methods.appear();
     setIsVisible(true);
   }
 
   return (
     <>
-      <div id="contact" ref={root} className="w-full max-w-[800px] mt-[96px] mb-[128px] flex flex-col items-center px-4">
+      <section id="contact" className="mt-16 mb-20 flex w-full max-w-[800px] scroll-mt-28 flex-col items-center px-4 md:mt-[96px] md:mb-[128px]">
         <Title center>Let&#39;s chat</Title>
         <p className="w-full mt-4 text-center">
           Whether it’s about joining your team, collaborating on a project, or simply chatting about design, books, or movies — I’m always open to meaningful conversations (fries included).
         </p>
-        <div ref={formRef} style={{ height: maxHeight ? 0 : 'auto' }} className="overflow-hidden w-full">
-          <div className="flex flex-col items-stretch w-full gap-4 mt-4">
-            <TextField error={!!errors.name?.message} helperText={errors.name?.message} size="small" variant="standard" label="Name" {...register('name')} />
-            <TextField error={!!errors.email?.message} helperText={errors.email?.message} type="email" variant="standard" label="Email" {...register('email')} />
-            <TextField error={!!errors.message?.message} helperText={errors.message?.message} multiline minRows={3} maxRows={3} variant="standard" label="Message" {...register('message')} />
+        <div className={`grid w-full transition-[grid-template-rows,opacity] duration-500 ${isVisible ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`} aria-hidden={!isVisible}>
+          <div className="min-h-0 overflow-hidden">
+            <div className="mt-6 flex w-full flex-col items-stretch gap-5 rounded-[24px] border border-primary-400 bg-[#faf8f5] p-5 sm:p-8">
+              <TextField disabled={!isVisible} error={!!errors.name?.message} helperText={errors.name?.message} size="small" variant="standard" label="Name" {...register('name')} />
+              <TextField disabled={!isVisible} error={!!errors.email?.message} helperText={errors.email?.message} type="email" variant="standard" label="Email" {...register('email')} />
+              <TextField disabled={!isVisible} error={!!errors.message?.message} helperText={errors.message?.message} multiline minRows={3} maxRows={5} variant="standard" label="Message" {...register('message')} />
+            </div>
           </div>
         </div>
         <div className="mt-[32px] group">
@@ -98,7 +64,7 @@ export function Contact() {
             <RightArrowIcon className="rotate-90 group-hover:rotate-45 transition ml-2" />
           </Button>
         </div>
-      </div>
+      </section>
       <Snackbar
         open={snackState.open}
         onClose={() => setSnackState({ open: false, message: '' })}

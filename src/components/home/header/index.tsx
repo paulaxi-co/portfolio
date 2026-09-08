@@ -7,7 +7,7 @@ import { Social } from "./social";
 
 export function Header() {
   return (
-    <div className="py-8 w-full max-w-[800] relative">
+    <section className="relative w-full max-w-[860px] px-4 py-4 md:py-8">
       <div className="flex flex-col items-center">
         <div className="border rounded-full w-max px-3 py-1 relative">
           Hiya!
@@ -17,9 +17,11 @@ export function Header() {
         <Title center>Product Designer</Title>
       </div>
       <Picture />
-      <Experience className="sm:absolute mt-8 sm:mt-0 right-0 top-1/2"/>
-      <Quote className="sm:absolute left-0 top-1/2 mt-4 sm:mt-0"/>
-      <Social className="sm:absolute bottom-0 right-0 mt-4 sm:mt-0"/>
-    </div>
+      <div className="mt-7 grid grid-cols-2 items-start gap-6 md:contents">
+        <Experience className="md:absolute md:right-0 md:top-1/2 md:mt-0"/>
+        <Quote className="md:absolute md:left-0 md:top-1/2 md:mt-0"/>
+        <Social className="col-span-2 mt-1 md:absolute md:bottom-0 md:right-0 md:mt-0"/>
+      </div>
+    </section>
   );
 }

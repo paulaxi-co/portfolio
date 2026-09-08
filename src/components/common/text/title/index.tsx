@@ -17,7 +17,7 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>(({ children, center, cl
   return (
     <h1 ref={ref} className={twMerge(
       className,
-      'leading-[40px] text-[32px] sm:text-[60px] my-0 font-semibold',
+      'text-[clamp(2.25rem,8vw,3.75rem)] leading-[1.02] my-0 font-semibold break-words',
       center && 'text-center',
       urbanist.className,
 

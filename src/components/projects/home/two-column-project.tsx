@@ -16,11 +16,11 @@ export function TwoColumnProject({title, description, projects} : TwoColumnProje
           {description}
         </Typography>
       </Stack>
-      <Grid container spacing={4}>
-        <Grid size={6}>
+      <Grid container spacing={{ xs: 6, md: 4 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <SmallProjectCard project={projects[0]} />
         </Grid>
-        <Grid size={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <SmallProjectCard project={projects[1]} />
         </Grid>
       </Grid>

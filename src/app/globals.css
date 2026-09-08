@@ -4,13 +4,46 @@
 
 
 html {
-  /* overflow: auto; */
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
   color: #171717;
-  font-family: 'Carlito', sans-serif;
+  font-family: var(--carlito-font), 'Carlito', sans-serif;
+  margin: 0;
+  overflow-x: clip;
+  background: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #8d765b;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 88px;
+  }
 }
 
 .radial-bg {

@@ -9,9 +9,9 @@ export function Picture() {
 
   return (
     <div className="relative flex flex-col items-center">
-      <Image width={330} height={0} alt="Pau smiling" src="/pau.png"/>
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 h-[66px] backdrop-blur-sm p-[8] rounded-[33px] flex gap-[8px] items-center border border-primary-400 w-max bg-white/10">
-        <span className="text-[18px] font-[500] text-white px-4">Portfolio</span>
+      <Image width={330} height={430} sizes="(max-width: 640px) 78vw, 330px" alt="Pau smiling" src="/pau.png" className="h-auto w-[min(78vw,330px)]" priority />
+      <div className="absolute bottom-2 left-1/2 flex h-[58px] w-max max-w-[calc(100vw-40px)] -translate-x-1/2 items-center gap-1 rounded-[33px] border border-primary-400 bg-white/10 p-[6px] backdrop-blur-sm sm:h-[66px] sm:gap-2 sm:p-[8px]">
+        <span className="px-3 text-base font-[500] text-white sm:px-4 sm:text-[18px]">Portfolio</span>
         <Button  onClick={() => router.push('#contact')} variant="contained">
           <span>
             Let&#39;s Chat

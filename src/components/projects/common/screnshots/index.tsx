@@ -12,7 +12,7 @@ export function ProjectScreenshots({ screenshots }: ProjectScrenshots) {
     <Container>
       <Grid container justifyContent="center" spacing={2} columns={4}>
         {screenshots.map(screenshot => (
-          <Grid key={screenshot.alt} size={1}>
+          <Grid key={screenshot.alt} size={{xs: 2, sm: 1}}>
             <Image
               className="w-full object-contain"
               width={400}

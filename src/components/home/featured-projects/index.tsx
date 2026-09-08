@@ -11,11 +11,11 @@ interface FeaturedProjectsProps {
 }
 export function FeaturedProjects({ className, id }: FeaturedProjectsProps) {
   return (
-    <div id={id} className={twMerge('w-full px-4 max-w-[1100px] top-[-100px] relative pt-[100px]', className)}>
+    <section id={id} className={twMerge('relative w-full max-w-[1100px] px-4 pt-10 md:pt-[100px]', className)}>
       <Title center>Featured Projects</Title>
       <p className="text-center mt-[24px]">From research to prototypes, here’s how I design meaningful digital experiences</p>
       <ScrollableContainer extractKey={item => item.id} renderItem={({ item }) => <ProjectCard project={item} />} data={HIGHLIGHTED_PROJECTS} />
-    </div>
+    </section>
 
   );
 }

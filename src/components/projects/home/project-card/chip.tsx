@@ -5,7 +5,7 @@ interface ChipProps {
 }
 export function Chip({label} : ChipProps) {
   return (
-    <div className="h-[36] rounded-[19px] border border-primary-600 w-max px-4 flex items-center justify-center flex-row">
+    <div className="flex h-[36px] w-max flex-row items-center justify-center rounded-[19px] border border-primary-600 px-4">
       <Typography className="text-primary-600">
         {label}
       </Typography>

@@ -52,7 +52,7 @@ const data: TimeStep[] = [
 
 export function TimeLine() {
   return (
-    <div className="mt-[100px]">
+    <section className="mt-16 md:mt-[100px]">
       <div>
         <Title center>Work Experience</Title>
         <p className="text-center text-[18px] font-[400]">From logistics to product design — the journey that built my lens.</p>
@@ -63,6 +63,6 @@ export function TimeLine() {
         </div>
       </div>
 
-    </div>
+    </section>
   );
 }

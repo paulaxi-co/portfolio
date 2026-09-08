@@ -23,8 +23,8 @@ export function CommonLayout({ children }: CommonLayoutProps) {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col gap-8 items-center w-full sm:py-[84px]">
-      <Navbar className="fixed top-[50px] left-1/2 -translate-1/2 z-10" selected={tab} />
+    <div className="flex min-h-screen w-full flex-col items-center gap-8 overflow-x-clip pt-[104px] pb-8 md:pt-[154px]">
+      <Navbar className="fixed top-3 left-1/2 z-50 -translate-x-1/2 md:top-[50px]" selected={tab} />
       {children}
       <Contact />
       <Footer />

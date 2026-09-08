@@ -9,14 +9,21 @@ export const theme = createTheme({
     }
   },
   typography: {
+    fontFamily: "var(--carlito-font), Carlito, sans-serif",
     h1: {
-      fontFamily: 'Urbanist'
+      fontFamily: 'Urbanist',
+      fontSize: 'clamp(2.25rem, 7vw, 3.75rem)',
+      lineHeight: 1.05
     },
     h2: {
-      fontFamily: 'Urbanist'
+      fontFamily: 'Urbanist',
+      fontSize: 'clamp(2rem, 6vw, 3.75rem)',
+      lineHeight: 1.08
     },
     h3: {
-      fontFamily: 'Urbanist'
+      fontFamily: 'Urbanist',
+      fontSize: 'clamp(1.65rem, 5vw, 3rem)',
+      lineHeight: 1.12
     }
   },
   components: {

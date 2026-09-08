@@ -24,8 +24,8 @@ export function SmallProjectCard({ project: { title, description, chips, image, 
   return (
     <Parent>
       <Stack spacing={4}>
-        <Image src={image} alt="GoPass" width={500} height={500} className="w-full rounded-2xl h-[350px] bg-center bg-contain" />
-        <Stack direction="row" spacing={1}>
+        <Image src={image} alt={title} width={800} height={600} sizes="(max-width: 768px) 100vw, 50vw" className="aspect-[4/3] h-auto w-full rounded-2xl object-cover" />
+        <Stack direction="row" useFlexGap flexWrap="wrap" spacing={1}>
           {chips.map(chip => (
             <Chip label={chip} key={chip} />
           ))}

@@ -13,7 +13,7 @@ function Subtitle({ children }: { children?: React.ReactNode }) {
 }
 export function Summary() {
   return (
-      <div className="grid sm:grid-cols-2 gap-[16px]">
+      <section className="grid items-start gap-10 md:grid-cols-2 md:gap-8">
         <div>
           <Subtitle>ABOUT ME</Subtitle>
           <p>
@@ -21,14 +21,14 @@ export function Summary() {
           </p>
           <div className="mt-[48px]">
             <Subtitle>OFF-SCREEN</Subtitle>
-            <ul className="list-disc pl-4 sm:w-[370px]">
-              <li>🐶 Fighting with Enzo over his breakfast</li>
-              <li>🍟 Team salchipapa costeña & french fries lover</li>
-              <li>📚 One more chapter… always</li>
-              <li>🎬 Certified couch film critic</li>
-            </ul>
-            <div className="sm:relative left-[370px] top-[-32px]">
-              <ul className="list-disc pl-4">
+            <div className="mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
+              <ul className="list-none space-y-1">
+                <li>🐶 Fighting with Enzo over his breakfast</li>
+                <li>🍟 Team salchipapa costeña & french fries lover</li>
+                <li>📚 One more chapter… always</li>
+                <li>🎬 Certified couch film critic</li>
+              </ul>
+              <ul className="list-none space-y-1">
                 <li>🐱 Proud servant of cats</li>
                 <li>✨ Nerding out on the tiniest details</li>
                 <li>🎶 Raised in the 2000s, vibing in the 80s</li>
@@ -37,18 +37,18 @@ export function Summary() {
             </div>
           </div>
         </div>
-        <div className="sm:block hidden">
-          <div className="relative">
-            <Picture src="/spock_and_me.png" className="rotate-[-10deg]" />
-            <SpockArrow className="absolute top-[15px] left-[160px]" />
+        <div className="relative mx-auto grid w-full max-w-[480px] grid-cols-2 items-start gap-3 pb-5 sm:gap-5">
+          <div className="relative rotate-[-6deg] md:rotate-[-10deg]">
+            <Picture src="/spock_and_me.png" className="w-full" />
+            <SpockArrow className="absolute left-[55%] top-3 hidden md:block" />
           </div>
-          <div className="relative">
-            <Picture src="/enzo_and_latte.png" className="relative top-[-60px] left-[272px] rotate-[12deg]" />
-            <LatteArrowIcon className="absolute top-[-110px] left-[350px]" />
-            <EnzoArrowIcon className="absolute top-[160px] left-[290px]" />
+          <div className="relative mt-14 rotate-[7deg] md:mt-28 md:rotate-[12deg]">
+            <Picture src="/enzo_and_latte.png" className="w-full" />
+            <LatteArrowIcon className="absolute -top-20 left-[35%] hidden md:block" />
+            <EnzoArrowIcon className="absolute left-4 top-[70%] hidden md:block" />
           </div>
         </div>
-      </div>
+      </section>
 
   );
 }

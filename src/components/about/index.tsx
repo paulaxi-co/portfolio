@@ -7,16 +7,16 @@ import { Wisf } from "./wisf";
 export function AboutPage() {
 
   return (
-    <div className="w-full px-4 max-w-[1100px] pt-[32px]">
+    <main className="w-full max-w-[1100px] px-4 pt-4 md:pt-[32px]">
       <Summary />
       <Wisf />
       <TimeLine />
-      <div className="grid sm:grid-cols-2 gap-[60px] mt-[100px]">
+      <div className="mt-16 grid gap-16 md:mt-[100px] md:grid-cols-2 md:gap-[60px]">
         <Education />
-        <div className="relative pt-[160px]">
+        <div className="relative md:pt-[160px]">
           <Skills />
         </div>
       </div>
-    </div>
+    </main>
   );
 }

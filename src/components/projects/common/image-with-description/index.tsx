@@ -10,7 +10,7 @@ interface ProjectImageWithDescriptionProps {
 export function ProjectImageWithDescription({title, text, src, alt}: ProjectImageWithDescriptionProps) {
   return (
   <Container>
-      <Stack direction="row" alignItems="center">
+      <Stack direction={{xs: 'column', md: 'row'}} spacing={4} alignItems="center">
         <Stack>
           <Typography variant="h3">{title}</Typography>
           <Typography>{text}</Typography>
