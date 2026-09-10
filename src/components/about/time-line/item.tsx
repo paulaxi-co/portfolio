@@ -25,7 +25,7 @@ function LateralBar() {
 function Card({ step }: Pick<ItemProps, 'step'>) {
   return (
     <article className="h-full w-full rounded-2xl bg-[#ADADAD26] p-4 sm:w-[500px] sm:p-5">
-      <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
+      <div className="flex flex-col gap-2 sm:flex-row sm:justify-between items-center">
         <div>
           <Subtitle>{step.title}</Subtitle>
           <h3 className="font-[400] text-[18px]">{step.subtitle}</h3>
