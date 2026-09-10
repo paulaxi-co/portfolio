@@ -55,7 +55,7 @@ export function TimeLine() {
     <section className="mt-16 md:mt-[100px]">
       <div>
         <Title center>Work Experience</Title>
-        <p className="text-center text-[18px] font-[400]">From logistics to product design — the journey that built my lens.</p>
+        <p className="text-center text-[18px] font-[400] mt-2">From logistics to product design — the journey that built my lens.</p>
         <div className="flex flex-col items-center mt-4">
           {data.map(item => (
             <Item step={item} key={item.id} />
