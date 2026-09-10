@@ -164,7 +164,6 @@ export function Navbar({ selected, onChange, className }: NavbarProps) {
                 )}
               >
                 {item.label}
-                <span aria-hidden="true">↗</span>
               </button>
             </li>
           ))}

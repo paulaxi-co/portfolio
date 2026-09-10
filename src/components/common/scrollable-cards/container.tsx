@@ -1,18 +1,5 @@
 "use client"
-import { useEffect, useMemo } from "react";
-import { twMerge } from "tailwind-merge";
-import { ScrollObserver, valueAtPercentage } from "aatjs";
-
-
-function idGen() {
-  const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-  return Array.from({
-    length: 5
-  }).map(() => {
-    const i = Math.floor(Math.random() * chars.length);
-    return chars[i];
-  }).join('')
-}
+import { useEffect, useRef } from "react";
 
 interface ItemProps<T> {
   item: T;
@@ -24,53 +11,63 @@ export interface ScrollableContainerProps<T> {
   extractKey: (item: T) => string;
 }
 export function ScrollableContainer<T>({ data, renderItem, extractKey }: ScrollableContainerProps<T>) {
-
-  const cardClassName = useMemo(() => `card-${idGen()}`, []);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const desktop = window.matchMedia('(min-width: 768px)');
-    if (!desktop.matches) return;
+    const container = containerRef.current;
+    if (!container) return;
 
-    const cards = document.querySelectorAll<HTMLDivElement>(`.${cardClassName}`);
+    const cards = Array.from(container.querySelectorAll<HTMLDivElement>('[data-stacked-card]'));
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    Array.from(cards).forEach((card, index) => {
-      const offsetTop = 100 + index * 20;
-      card.style.paddingTop = `${offsetTop}px`;
+    const updateCards = () => {
+      const isMobile = window.innerWidth < 768;
+      const baseOffset = isMobile ? 72 : 100;
+      const offsetStep = isMobile ? 12 : 20;
+      const scaleStep = isMobile ? 0.025 : 0.05;
 
-      if (index === cards.length - 1) return;
+      cards.forEach((card, index) => {
+        const offsetTop = baseOffset + index * offsetStep;
+        const cardInner = card.querySelector<HTMLDivElement>('.card__inner');
+        const nextCard = cards[index + 1];
 
-      const toScale = 1 - (cards.length - 1 - index) * 0.05;
-      const nextCard = cards[index + 1];
-      const cardInner = card.querySelector<HTMLDivElement>('.card__inner');
+        card.style.paddingTop = `${offsetTop}px`;
+        if (!cardInner) return;
 
-      ScrollObserver.Element(nextCard, { offsetTop, offsetBottom: window.innerHeight - card.clientHeight }).onScroll(({ percentageY }: {percentageY: number}) => {
-        cardInner!.style.scale = valueAtPercentage({
-          from: 1,
-          to: toScale,
-          percentage: percentageY
-        });
-        cardInner!.style.filter = `brightness(${valueAtPercentage({
-          from: 1,
-          to: 0.9,
-          percentage: percentageY
+        if (!nextCard || prefersReducedMotion.matches) {
+          cardInner.style.transform = '';
+          cardInner.style.filter = '';
+          return;
+        }
 
-        })})`;
+        const start = offsetTop + cardInner.offsetHeight;
+        const progress = Math.min(1, Math.max(0, (start - nextCard.getBoundingClientRect().top) / Math.max(cardInner.offsetHeight, 1)));
+        const targetScale = 1 - (cards.length - 1 - index) * scaleStep;
+        const scale = 1 - (1 - targetScale) * progress;
 
-      })
+        cardInner.style.transform = `scale(${scale})`;
+        cardInner.style.filter = `brightness(${1 - 0.1 * progress})`;
+      });
+    };
 
+    updateCards();
+    window.addEventListener('scroll', updateCards, { passive: true });
+    window.addEventListener('resize', updateCards);
+    prefersReducedMotion.addEventListener('change', updateCards);
 
-
-    })
-
-
-  }, [cardClassName]);
+    return () => {
+      window.removeEventListener('scroll', updateCards);
+      window.removeEventListener('resize', updateCards);
+      prefersReducedMotion.removeEventListener('change', updateCards);
+    };
+  }, [data]);
 
 
   return (
-    <div className="w-full flex flex-col">
+    <div ref={containerRef} className="flex w-full flex-col">
       {data.map(item => (
-        <div className={twMerge(cardClassName, "py-4 md:sticky md:top-0 md:py-0")} key={extractKey(item)}>
-          <div className="card__inner origin-top">
+        <div data-stacked-card className="sticky top-0" key={extractKey(item)}>
+          <div className="card__inner origin-top will-change-transform">
             {renderItem({ item })}
           </div>
         </div>
