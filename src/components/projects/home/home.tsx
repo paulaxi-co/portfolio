@@ -12,7 +12,7 @@ export function ProjectHome() {
       <Stack spacing={8}>
         <div>
           <Title center>Highlights</Title>
-          <Typography className="text-center">
+          <Typography className="text-center mt-2">
             A selection of projects that best reflect my process and impact.
           </Typography>
           <ScrollableContainer extractKey={item => item.id} renderItem={({ item }) => <ProjectCard project={item} />} data={HIGHLIGHTED_PROJECTS} />
